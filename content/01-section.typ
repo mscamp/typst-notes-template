@@ -14,6 +14,8 @@
   Lasciata allo studente per esercizio.
 ]
 
+#linebreak()
+
 #lemma("Equazione di Schrödinger")[
   $ i hbar dv(, t) ket(psi) = hat(H) ket(psi) $
 ]
@@ -21,6 +23,8 @@
 #proof[
   Ovvio. Banale.
 ]
+
+#linebreak()
 
 #theorem("Teorema di Pitagora")[
   $ c^2 = a^2 + b^2 $
@@ -31,6 +35,8 @@
   $ c^2 = a^2 + b^2 $
 ]
 
+#linebreak()
+
 #corollary("Pitagora")[
   Segue dal teorema di Pitagora che
   $ c = sqrt(a^2 + b^2) $
@@ -40,15 +46,17 @@
   Ovvio. #lorem(20)
 ]
 
+#linebreak()
+
 #proposition("Proposizione importante")[
   $ curl (grad f), tensor(T, -mu, +nu), pdv(f, x, y, [1,2]) $
 ]
 
 #proof[
-  Assolutamente ovvio. #lorem(50)
+  Assolutamente ovvio. #lorem(20)
 ]
 
-#pagebreak()
+#linebreak()
 
 #definition("Prova")[
   Questa è una definizione. #lorem(20)
@@ -58,7 +66,6 @@
   Questa è una nota. #lorem(20)
 ]
 
-
 #observation("Prova")[
   Questa è una osservazione. #lorem(20)
 ]
@@ -67,13 +74,19 @@
   Questo è un esempio.
 ]
 
+#linebreak()
+
 Si può osservare un gatto in @cat.
 
 #figure(
-  image("figures/minimal_cat.jpg", width: 70%),
+  image("figures/minimal_cat.jpg", width: 50%),
   caption: [
     Questo è un gatto.
   ],
 ) <cat>
 
-Esempio di citazione @scalinglaws
+#linebreak()
+
+Esempio di citazione @scalinglaws. #lorem(110)
+
+#pagebreak()
