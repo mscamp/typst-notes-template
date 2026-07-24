@@ -16,16 +16,6 @@
 
 #linebreak()
 
-#lemma("Equazione di Schrödinger")[
-  $ i hbar dv(, t) ket(psi) = hat(H) ket(psi) $
-]
-
-#proof[
-  Ovvio. Banale.
-]
-
-#linebreak()
-
 #theorem("Teorema di Pitagora")[
   $ c^2 = a^2 + b^2 $
 ]
