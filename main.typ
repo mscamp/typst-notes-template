@@ -1,12 +1,14 @@
 // Imports
 #import "content/template.typ": *
 
+// Create objects
+#let abs = include "content/abstract.typ"
 // Header
 #show: template.with(
   title: "Titolo",
   subtitle: "Sottotitolo",
   author: "Autore",
-  abstract: lorem(50),
+  abstract: abs,
 )
 
 // Table of contents
