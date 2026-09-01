@@ -90,9 +90,12 @@
     set text(font: font)
     set par(first-line-indent: 0em)
 
+    if it.level == 1 and counter(heading).get().at(0) > 1 {
+      pagebreak(weak: true)
+    }
+
     if it.numbering != none {
       text(accent, weight: 500)[#sym.section]
-
       text(accent)[#counter(heading).display() ]
     }
     it.body

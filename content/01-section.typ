@@ -78,5 +78,3 @@ Si può osservare un gatto in @cat.
 #linebreak()
 
 Esempio di citazione @scalinglaws. #lorem(110)
-
-#pagebreak()
