@@ -1,5 +1,5 @@
 // Imports
-#import "template.typ": *
+#import "../template.typ": *
 #import "@preview/physica:0.9.5": *
 
 = Titolo della sezione
@@ -69,7 +69,7 @@
 Si può osservare un gatto in @cat.
 
 #figure(
-  image("figures/minimal_cat.jpg", width: 50%),
+  image("../figures/minimal_cat.jpg", width: 50%),
   caption: [
     Questo è un gatto.
   ],

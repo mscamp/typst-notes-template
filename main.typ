@@ -15,5 +15,5 @@
 )
 
 // Sections
-#include "content/01-section.typ"
-#include "content/02-section.typ"
+#include "content/sections/01-section.typ"
+#include "content/sections/02-section.typ"
