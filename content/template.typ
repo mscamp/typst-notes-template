@@ -101,7 +101,7 @@
     it.body
   }
 
-  set text(font: font, lang: "it")
+  set text(font: font, lang: lang)
 
   show math.equation: set text(weight: 400)
 
