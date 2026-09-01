@@ -136,7 +136,7 @@
   // Main body
   set par(
     justify: true,
-    first-line-indent: 1em,
+    first-line-indent: 0em,
   )
 
   body
