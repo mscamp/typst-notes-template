@@ -91,7 +91,7 @@
     set par(first-line-indent: 0em)
 
     if it.level == 1 and counter(heading).get().at(0) > 1 {
-      pagebreak(weak: true)
+      pagebreak()
     }
 
     if it.numbering != none {
