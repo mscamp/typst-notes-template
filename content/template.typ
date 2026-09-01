@@ -1,6 +1,10 @@
 #import "@preview/ctheorems:1.1.3": *
 #import "@preview/showybox:2.0.4": showybox
 
+// Global document settings
+#let font = "New Computer Modern"
+#let lang = "it"
+
 #let colors = (
   rgb("#9E9E9E"), // 0
   rgb("#FFB3B3"), // 1
@@ -23,6 +27,38 @@
   rgb("#9E9E9E"), // 18
 )
 
+#let translations = (
+  "en": (
+    "problem": "Problem",
+    "theorem": "Theorem",
+    "lemma": "Lemma",
+    "corollary": "Corollary",
+    "definition": "Definition",
+    "proposition": "Proposition",
+    "remark": "Remark",
+    "observation": "Observation",
+    "example": "Example",
+    "proof": "Proof",
+  ),
+  "it": (
+    "problem": "Esercizio",
+    "theorem": "Teorema",
+    "lemma": "Lemma",
+    "corollary": "Corollario",
+    "definition": "Definizione",
+    "proposition": "Proposizione",
+    "remark": "Nota",
+    "observation": "Osservazione",
+    "example": "Esempio",
+    "proof": "Dimostrazione",
+  ),
+)
+
+#let t = if lang in translations { translations.at(lang) } else {
+  translations.at("en")
+}
+
+// Beginning of template block
 #let template(
   title: "",
   subtitle: "",
@@ -43,14 +79,14 @@
         return
       }
       box(stroke: (bottom: 0.7pt), inset: 0.2em)[#text(
-        font: "New Computer Modern",
+        font: font,
       )[#author #h(1fr)#title]]
     },
   )
 
   set heading(numbering: "1.")
   show heading: it => {
-    set text(font: "New Computer Modern")
+    set text(font: font)
     set par(first-line-indent: 0em)
 
     if it.numbering != none {
@@ -61,14 +97,14 @@
     it.body
   }
 
-  set text(font: "New Computer Modern", lang: "it")
+  set text(font: font, lang: "it")
 
   show math.equation: set text(weight: 400)
 
 
   // Title row
   align(center)[
-    #set text(font: "New Computer Modern")
+    #set text(font: font)
     #block(text(weight: 700, 25pt, title))
     #v(1.6em, weak: true)
     #if subtitle != none [#text(18pt, weight: 500)[#subtitle]]
@@ -85,10 +121,10 @@
   show outline: set par(first-line-indent: 0em)
 
   show outline.entry.where(level: 1): it => {
-    text(font: "New Computer Modern", accent)[#strong[#it]]
+    text(font: font, accent)[#strong[#it]]
   }
   show outline.entry: it => {
-    text(font: "New Computer Modern", accent)[#it]
+    text(font: font, accent)[#it]
   }
 
   // Main body
@@ -101,10 +137,10 @@
 }
 
 #let thmtitle(t, color: rgb("#000000")) = {
-  text(font: "New Computer Modern", weight: "semibold", fill: color)[#t]
+  text(font: font, weight: "semibold", fill: color)[#t]
 }
 #let thmname(t, color: rgb("#000000")) = {
-  text(font: "New Computer Modern", fill: color)[(#t)]
+  text(font: font, fill: color)[(#t)]
 }
 
 #let thmtext(t, color: rgb("#000000")) = {
@@ -114,7 +150,7 @@
   }
   t = a.join()
 
-  text(font: "New Computer Modern", fill: color)[#t]
+  text(font: font, fill: color)[#t]
 }
 
 #let thmbase(
@@ -241,18 +277,18 @@
 #let example-style = builder-thmline(color: colors.at(9))
 
 // Boxes
-#let problem = problem-style("problem", "Esercizio")
-#let theorem = theorem-style("theorem", "Teorema")
-#let lemma = lemma-style("lemma", "Lemma")
-#let corollary = corollary-style("corollary", "Corollario")
-#let definition = definition-style("definition", "Definizione")
-#let proposition = proposition-style("proposition", "Proposizione")
-#let remark = remark-style("remark", "Nota")
-#let observation = observation-style("observation", "Osservazione")
-#let example = example-style("example", "Esempio").with(numbering: none)
+#let problem = problem-style("problem", t.problem)
+#let theorem = theorem-style("theorem", t.theorem)
+#let lemma = lemma-style("lemma", t.lemma)
+#let corollary = corollary-style("corollary", t.corollary)
+#let definition = definition-style("definition", t.definition)
+#let proposition = proposition-style("proposition", t.proposition)
+#let remark = remark-style("remark", t.remark)
+#let observation = observation-style("observation", t.observation)
+#let example = example-style("example", t.example).with(numbering: none)
 
 #let proof(body, name: none) = {
-  thmtitle[Dimostrazione]
+  thmtitle[#t.proof]
   if name != none {
     [ #thmname[#name]]
   }

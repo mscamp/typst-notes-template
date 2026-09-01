@@ -6,7 +6,7 @@
 == Titolo della sottosezione
 === Titolo della sotto-sottosezione
 
-#problem[
+#problem("Prova")[
   Dimostra che $1+1=2$.
 ]
 
