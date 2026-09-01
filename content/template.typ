@@ -3,23 +3,23 @@
 
 #let colors = (
   rgb("#9E9E9E"), // 0
-  rgb("#F44336"), // 1
-  rgb("#E91E63"), // 2
-  rgb("#9C27B0"), // 3
-  rgb("#673AB7"), // 4
-  rgb("#3F51B5"), // 5
-  rgb("#2196F3"), // 6
-  rgb("#03A9F4"), // 7
-  rgb("#00BCD4"), // 8
-  rgb("#009688"), // 9
-  rgb("#4CAF50"), // 10
-  rgb("#8BC34A"), // 11
-  rgb("#CDDC39"), // 12
-  rgb("#FFEB3B"), // 13
-  rgb("#FFC107"), // 14
-  rgb("#FF9800"), // 15
-  rgb("#FF5722"), // 16
-  rgb("#795548"), // 17
+  rgb("#FFB3B3"), // 1
+  rgb("#FFC8A0"), // 2
+  rgb("#FFD78C"), // 3
+  rgb("#FFEB8C"), // 4
+  rgb("#FFFF96"), // 5
+  rgb("#EBFF8C"), // 6
+  rgb("#C8FF96"), // 7
+  rgb("#96FFC8"), // 8
+  rgb("#96F5FF"), // 9
+  rgb("#96D2FF"), // 10
+  rgb("#B4D2FF"), // 11
+  rgb("#D2BEFF"), // 12
+  rgb("#E6BEFF"), // 13
+  rgb("#F5B4F0"), // 14
+  rgb("#FFB4DC"), // 15
+  rgb("#FFC8DC"), // 16
+  rgb("#FFBEC8"), // 17
   rgb("#9E9E9E"), // 18
 )
 
@@ -28,7 +28,7 @@
   subtitle: "",
   author: "",
   abstract: none,
-  accent: colors.at(6),
+  accent: colors.at(10),
   body,
 ) = {
   set document(title: title)
@@ -43,14 +43,14 @@
         return
       }
       box(stroke: (bottom: 0.7pt), inset: 0.2em)[#text(
-        font: "New Computer Modern Sans",
+        font: "New Computer Modern",
       )[#author #h(1fr)#title]]
     },
   )
 
   set heading(numbering: "1.")
   show heading: it => {
-    set text(font: "New Computer Modern Sans")
+    set text(font: "New Computer Modern")
     set par(first-line-indent: 0em)
 
     if it.numbering != none {
@@ -68,7 +68,7 @@
 
   // Title row
   align(center)[
-    #set text(font: "New Computer Modern Sans")
+    #set text(font: "New Computer Modern")
     #block(text(weight: 700, 25pt, title))
     #v(1.6em, weak: true)
     #if subtitle != none [#text(18pt, weight: 500)[#subtitle]]
@@ -85,10 +85,10 @@
   show outline: set par(first-line-indent: 0em)
 
   show outline.entry.where(level: 1): it => {
-    text(font: "New Computer Modern Sans", accent)[#strong[#it]]
+    text(font: "New Computer Modern", accent)[#strong[#it]]
   }
   show outline.entry: it => {
-    text(font: "New Computer Modern Sans", accent)[#it]
+    text(font: "New Computer Modern", accent)[#it]
   }
 
   // Main body
@@ -101,10 +101,10 @@
 }
 
 #let thmtitle(t, color: rgb("#000000")) = {
-  text(font: "New Computer Modern Sans", weight: "semibold", fill: color)[#t]
+  text(font: "New Computer Modern", weight: "semibold", fill: color)[#t]
 }
 #let thmname(t, color: rgb("#000000")) = {
-  text(font: "New Computer Modern Sans", fill: color)[(#t)]
+  text(font: "New Computer Modern", fill: color)[(#t)]
 }
 
 #let thmtext(t, color: rgb("#000000")) = {

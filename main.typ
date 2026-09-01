@@ -3,6 +3,7 @@
 
 // Create objects
 #let abs = include "content/abstract.typ"
+
 // Header
 #show: template.with(
   title: "Titolo",
