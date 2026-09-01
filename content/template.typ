@@ -64,6 +64,7 @@
   subtitle: "",
   author: "",
   abstract: none,
+  bib: (),
   accent: colors.at(10),
   body,
 ) = {
@@ -113,8 +114,10 @@
 
   ]
 
+  // Abstract
   if abstract != none [#align(center)[#abstract]]
 
+  // TOC
   set outline(indent: 1em)
 
   show outline: set heading(numbering: none)
@@ -127,6 +130,9 @@
     text(font: font, accent)[#it]
   }
 
+  outline()
+  pagebreak()
+
   // Main body
   set par(
     justify: true,
@@ -134,6 +140,12 @@
   )
 
   body
+
+  // Bibliography
+  if bib != () {
+    pagebreak()
+    bib
+  }
 }
 
 #let thmtitle(t, color: rgb("#000000")) = {
