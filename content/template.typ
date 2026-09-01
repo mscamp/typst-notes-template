@@ -136,17 +136,17 @@
   outline()
   pagebreak()
 
-  // Main body
+  // Paragraphs
   set par(
     justify: true,
     first-line-indent: 0em,
   )
 
+  // Main body
   body
 
   // Bibliography
   if bib != () {
-    pagebreak()
     bib
   }
 }
